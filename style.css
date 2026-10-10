@@ -173,14 +173,15 @@ a:focus-visible, .boton:focus-visible {
 .portada__texto { display: grid; gap: 1.25rem; min-width: 0; }
 .entradilla { font-size: 1.15rem; color: var(--texto-suave); max-width: 34rem; }
 .portada__imagen {
+  display: block;
+  width: 100%;
+  height: auto;
   aspect-ratio: 4 / 5;
   max-width: 100%;
+  object-fit: cover;          /* recorta la foto sin deformarla */
+  object-position: 50% 25%;   /* mantiene a la vista la cara de la peluquera */
   border-radius: 12rem 12rem var(--radio) var(--radio);  /* forma de arco, como un espejo de salón */
-  background: linear-gradient(160deg, var(--fondo-suave), var(--linea));
-  display: grid;
-  place-items: center;
-  color: var(--texto-suave);
-  font-size: 0.9rem;
+  background: var(--fondo-suave);
 }
 
 /* ---------- Secciones ---------- */
