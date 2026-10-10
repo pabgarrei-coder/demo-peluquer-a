@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Estudio Nácar · Peluquería y estética en Elda</title>
+  <meta name="description" content="Peluquería y estética en Elda: corte, color, mechas, tratamientos y estética. Pide cita por WhatsApp. Web de demostración de un negocio ficticio.">
+
+  <!-- Tipografías gratuitas de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;500;700&display=swap">
+
+  <!-- Todo el aspecto visual está en este archivo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- AVISO: quítalo cuando la web sea de un cliente real -->
+  <p class="aviso-demo">Web de demostración. Estudio Nácar es un negocio ficticio creado como ejemplo.</p>
+
+  <!-- CABECERA: nombre del negocio, menú y botón de cita -->
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="logo" href="#inicio">Nácar<span>peluquería · estética</span></a>
+      <nav class="menu" aria-label="Menú principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#trabajos">Trabajos</a>
+        <a href="#horario">Horario</a>
+      </nav>
+      <a class="boton boton--pequeno" href="#cita">Pedir cita</a>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <!-- PORTADA: lo primero que ve el cliente -->
+    <section class="portada">
+      <div class="contenedor portada__fila">
+        <div class="portada__texto">
+          <p class="etiqueta">Elda · con cita previa</p>
+          <h1>Color, corte y estética en el centro de Elda</h1>
+          <p class="entradilla">Especialistas en mechas y color a medida. Te asesoramos antes de empezar y te decimos el precio final antes de tocar tu pelo.</p>
+          <div class="botones">
+            <!-- En la web de un cliente real, cambia el enlace por https://wa.me/34 + su número -->
+            <a class="boton" href="https://wa.me/?text=Hola%2C%20quiero%20pedir%20cita%20en%20Estudio%20N%C3%A1car" target="_blank" rel="noopener">Pedir cita por WhatsApp</a>
+            <a class="boton boton--claro" href="#servicios">Ver precios</a>
+          </div>
+        </div>
+        <div class="portada__imagen" role="img" aria-label="Espacio para una foto del salón">
+          <span>Foto del salón</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS Y PRECIOS: agrupados por tipo para encontrarlos rápido -->
+    <section id="servicios" class="seccion">
+      <div class="contenedor">
+        <p class="etiqueta">Servicios y precios</p>
+        <h2>Lo que hacemos</h2>
+        <p class="nota">Precios orientativos. El precio final depende del largo y la cantidad de pelo, y te lo confirmamos antes de empezar.</p>
+
+        <div class="tarifas">
+          <article class="tarifa">
+            <h3>Corte y peinado</h3>
+            <ul class="precios">
+              <li><span>Corte mujer</span><b>desde 18 €</b></li>
+              <li><span>Corte hombre</span><b>12 €</b></li>
+              <li><span>Lavar y peinar</span><b>desde 14 €</b></li>
+              <li><span>Recogido o peinado de evento</span><b>desde 30 €</b></li>
+            </ul>
+          </article>
+
+          <article class="tarifa">
+            <h3>Color</h3>
+            <ul class="precios">
+              <li><span>Tinte de raíz</span><b>desde 30 €</b></li>
+              <li><span>Tinte completo</span><b>desde 38 €</b></li>
+              <li><span>Mechas</span><b>desde 55 €</b></li>
+              <li><span>Balayage</span><b>desde 75 €</b></li>
+            </ul>
+          </article>
+
+          <article class="tarifa">
+            <h3>Tratamientos</h3>
+            <ul class="precios">
+              <li><span>Hidratación profunda</span><b>20 €</b></li>
+              <li><span>Alisado de keratina</span><b>desde 90 €</b></li>
+              <li><span>Tratamiento anticaída</span><b>25 €</b></li>
+            </ul>
+          </article>
+
+          <article class="tarifa">
+            <h3>Estética</h3>
+            <ul class="precios">
+              <li><span>Diseño de cejas</span><b>8 €</b></li>
+              <li><span>Manicura semipermanente</span><b>20 €</b></li>
+              <li><span>Maquillaje de evento</span><b>35 €</b></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANTES Y DESPUÉS: aquí irán fotos reales de trabajos del salón -->
+    <section id="trabajos" class="seccion seccion--suave">
+      <div class="contenedor">
+        <p class="etiqueta">Antes y después</p>
+        <h2>Nuestros trabajos</h2>
+        <p class="nota">Espacio reservado para fotos reales del salón, siempre con permiso de cada clienta.</p>
+
+        <div class="galeria">
+          <figure class="trabajo">
+            <div class="trabajo__fotos">
+              <div class="foto foto--castano"><span>Antes</span></div>
+              <div class="foto foto--balayage"><span>Después</span></div>
+            </div>
+            <figcaption><b>Balayage caramelo</b> · 2 h 30 min</figcaption>
+          </figure>
+
+          <figure class="trabajo">
+            <div class="trabajo__fotos">
+              <div class="foto foto--oscuro"><span>Antes</span></div>
+              <div class="foto foto--cobre"><span>Después</span></div>
+            </div>
+            <figcaption><b>Color cobre</b> · 1 h 45 min</figcaption>
+          </figure>
+
+          <figure class="trabajo">
+            <div class="trabajo__fotos">
+              <div class="foto foto--rubio"><span>Antes</span></div>
+              <div class="foto foto--perla"><span>Después</span></div>
+            </div>
+            <figcaption><b>Rubio perla</b> · 3 h</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO PEDIR CITA: tres pasos en orden -->
+    <section id="cita" class="seccion">
+      <div class="contenedor">
+        <p class="etiqueta">Pedir cita</p>
+        <h2>Reservar es muy fácil</h2>
+        <ol class="pasos">
+          <li><b>Escríbenos por WhatsApp</b> con el servicio que quieres y el día que te viene bien.</li>
+          <li><b>Te confirmamos la hora</b> y el precio aproximado en el mismo día.</li>
+          <li><b>Ven al salón.</b> Si no puedes venir, avísanos con 24 horas de antelación.</li>
+        </ol>
+        <a class="boton" href="https://wa.me/?text=Hola%2C%20quiero%20pedir%20cita%20en%20Estudio%20N%C3%A1car" target="_blank" rel="noopener">Pedir cita por WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- HORARIO Y DIRECCIÓN -->
+    <section id="horario" class="seccion seccion--suave">
+      <div class="contenedor info">
+        <div>
+          <p class="etiqueta">Horario</p>
+          <h2>Cuándo estamos</h2>
+          <table class="horario">
+            <tr><th>Lunes</th><td>Cerrado</td></tr>
+            <tr><th>Martes a viernes</th><td>9:30–13:30 y 16:30–20:00</td></tr>
+            <tr><th>Sábado</th><td>9:00–14:00</td></tr>
+            <tr><th>Domingo</th><td>Cerrado</td></tr>
+          </table>
+        </div>
+        <div>
+          <p class="etiqueta">Dónde estamos</p>
+          <h2>Ven a vernos</h2>
+          <p>Calle de ejemplo, 1<br>03600 Elda (Alicante)</p>
+          <p>Teléfono: 600 00 00 00 <small>(número de ejemplo)</small></p>
+          <a class="boton boton--claro" href="https://www.google.com/maps/search/?api=1&amp;query=Elda%2C%20Alicante" target="_blank" rel="noopener">Ver en Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <p>Estudio Nácar · Peluquería y estética · Elda</p>
+      <p>Web de demostración diseñada por Pau García. Negocio y precios ficticios.</p>
+    </div>
+  </footer>
+
+  <!-- Botón fijo de WhatsApp que se ve solo en el móvil -->
+  <a class="whatsapp-movil" href="https://wa.me/?text=Hola%2C%20quiero%20pedir%20cita%20en%20Estudio%20N%C3%A1car" target="_blank" rel="noopener">Pedir cita por WhatsApp</a>
+
+</body>
+</html>

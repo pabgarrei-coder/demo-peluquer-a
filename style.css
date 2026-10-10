@@ -1,0 +1,348 @@
+/* =========================================================
+   Estudio Nácar · hoja de estilos
+   Para cambiar los colores de toda la web, cambia solo las
+   variables de :root. Para cambiar las letras, cambia --letra-*.
+   Diseño: una sola columna estrecha, como una carta de precios
+   de salón, con tonos nácar fríos y un verde azulado de acento.
+   ========================================================= */
+
+:root {
+  --fondo: #f5f4f7;          /* nácar claro: fondo de la página */
+  --fondo-suave: #ebe8ef;    /* fondo de las secciones alternas */
+  --tarjeta: #ffffff;        /* fondo de las cajas */
+  --texto: #241d2c;          /* berenjena casi negro: texto */
+  --texto-suave: #5f5869;    /* texto secundario */
+  --acento: #2c6964;         /* verde azulado: botones y detalles */
+  --acento-texto: #ffffff;   /* texto encima del acento */
+  --linea: #d8d3de;          /* líneas y bordes */
+
+  --letra-titulos: "Marcellus", Georgia, "Times New Roman", serif;
+  --letra-texto: "Karla", "Segoe UI", Roboto, Arial, sans-serif;
+
+  --ancho: 64rem;            /* ancho máximo del contenido */
+  --radio: 0.5rem;
+}
+
+/* Modo oscuro: se activa solo si el móvil o el ordenador lo usa */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --fondo: #17141b;
+    --fondo-suave: #1f1b25;
+    --tarjeta: #26212d;
+    --texto: #eeeaf2;
+    --texto-suave: #b2abbb;
+    --acento: #6fb8b0;
+    --acento-texto: #10201e;
+    --linea: #3a3442;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --fondo: #17141b;
+  --fondo-suave: #1f1b25;
+  --tarjeta: #26212d;
+  --texto: #eeeaf2;
+  --texto-suave: #b2abbb;
+  --acento: #6fb8b0;
+  --acento-texto: #10201e;
+  --linea: #3a3442;
+  color-scheme: dark;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: var(--letra-texto);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--letra-titulos);
+  font-weight: 400;
+  line-height: 1.15;
+  text-wrap: balance;
+  margin: 0;
+}
+h1 { font-size: clamp(2.1rem, 6vw, 3.4rem); }
+h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); }
+h3 { font-size: 1.35rem; }
+p  { margin: 0; }
+
+a { color: var(--acento); }
+a:focus-visible, .boton:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 3px;
+}
+
+/* Caja central con margen lateral de 16 px como mínimo */
+.contenedor {
+  max-width: var(--ancho);
+  margin-inline: auto;
+  padding-inline: max(1rem, 4vw);
+}
+
+/* Texto pequeño en mayúsculas encima de los títulos */
+.etiqueta {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--acento);
+  margin-bottom: 0.5rem;
+}
+.nota { color: var(--texto-suave); max-width: 40rem; margin-top: 0.75rem; }
+
+/* ---------- Aviso de demostración ---------- */
+.aviso-demo {
+  background: var(--texto);
+  color: var(--fondo);
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+}
+
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-block;
+  background: var(--acento);
+  color: var(--acento-texto);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+  border: 2px solid var(--acento);
+  transition: transform 0.15s ease;
+}
+.boton:hover { transform: translateY(-1px); }
+.boton--claro { background: transparent; color: var(--acento); }
+.boton--pequeno { padding: 0.5rem 1rem; font-size: 0.95rem; }
+.botones { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+/* ---------- Cabecera ---------- */
+.cabecera {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  background: var(--fondo);
+  border-bottom: 1px solid var(--linea);
+}
+.cabecera__fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.75rem;
+}
+.logo {
+  font-family: var(--letra-titulos);
+  font-size: 1.6rem;
+  color: var(--texto);
+  text-decoration: none;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+}
+.logo span {
+  font-family: var(--letra-texto);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  margin-top: 0.25rem;
+}
+.menu { display: flex; gap: 1.5rem; }
+.menu a { color: var(--texto); text-decoration: none; font-weight: 500; }
+.menu a:hover { color: var(--acento); }
+
+/* ---------- Portada ---------- */
+.portada { padding-block: 3rem 3.5rem; }
+.portada__fila {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+.portada__texto { display: grid; gap: 1.25rem; min-width: 0; }
+.entradilla { font-size: 1.15rem; color: var(--texto-suave); max-width: 34rem; }
+.portada__imagen {
+  aspect-ratio: 4 / 5;
+  max-width: 100%;
+  border-radius: 12rem 12rem var(--radio) var(--radio);  /* forma de arco, como un espejo de salón */
+  background: linear-gradient(160deg, var(--fondo-suave), var(--linea));
+  display: grid;
+  place-items: center;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+/* ---------- Secciones ---------- */
+.seccion { padding-block: 4rem; }
+.seccion--suave { background: var(--fondo-suave); }
+.seccion .contenedor > h2 { margin-bottom: 0.25rem; }
+
+/* ---------- Carta de precios ---------- */
+.tarifas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.tarifa {
+  background: var(--tarjeta);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  padding: 1.5rem;
+}
+.precios { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: 0.6rem; }
+.precios li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+/* Línea de puntos entre el servicio y el precio */
+.precios span { flex: 1; display: flex; gap: 0.5rem; min-width: 0; }
+.precios span::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px dotted var(--linea);
+  transform: translateY(-0.3em);
+  min-width: 1rem;
+}
+.precios b {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ---------- Antes y después ---------- */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.trabajo { margin: 0; display: grid; gap: 0.6rem; }
+.trabajo__fotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  border-radius: var(--radio);
+  overflow: hidden;
+}
+.foto {
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.5rem;
+}
+.foto span {
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+}
+/* Colores de ejemplo hasta tener fotos reales */
+.foto--castano  { background: linear-gradient(180deg, #4a3326, #2e2019); }
+.foto--balayage { background: linear-gradient(180deg, #4a3326 10%, #a8774a 55%, #d9b387); }
+.foto--oscuro   { background: linear-gradient(180deg, #2a2222, #191414); }
+.foto--cobre    { background: linear-gradient(180deg, #8c3f1f, #c2652f 60%, #d98b52); }
+.foto--rubio    { background: linear-gradient(180deg, #b8955c, #8f6f3e); }
+.foto--perla    { background: linear-gradient(180deg, #e8e2d6, #cfc7bb 60%, #b9b1a8); }
+.trabajo figcaption { color: var(--texto-suave); font-size: 0.95rem; }
+.trabajo figcaption b { color: var(--texto); }
+
+/* ---------- Pasos para pedir cita ---------- */
+.pasos {
+  list-style: none;
+  counter-reset: paso;
+  margin: 2rem 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+.pasos li {
+  counter-increment: paso;
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+}
+.pasos li::before {
+  content: counter(paso);
+  font-family: var(--letra-titulos);
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--acento);
+}
+.pasos b { display: block; }
+
+/* ---------- Horario y dirección ---------- */
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+}
+.info > div { display: grid; gap: 0.9rem; align-content: start; justify-items: start; }
+.horario { border-collapse: collapse; width: 100%; max-width: 28rem; }
+.horario th, .horario td {
+  text-align: left;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--linea);
+  font-variant-numeric: tabular-nums;
+}
+.horario th { font-weight: 500; padding-right: 1rem; }
+.info small { color: var(--texto-suave); }
+
+/* ---------- Pie ---------- */
+.pie {
+  padding-block: 2rem 6rem;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--linea);
+}
+.pie .contenedor { display: grid; gap: 0.25rem; }
+
+/* ---------- Botón fijo de WhatsApp (solo móvil) ---------- */
+.whatsapp-movil { display: none; }
+
+/* =========================================================
+   MÓVIL: a partir de aquí, cambios para pantallas estrechas
+   ========================================================= */
+@media (max-width: 760px) {
+  .menu { display: none; }
+  .portada { padding-block: 2rem 2.5rem; }
+  .portada__fila { grid-template-columns: 1fr; gap: 2rem; }
+  .portada__imagen { aspect-ratio: 4 / 3; border-radius: 8rem 8rem var(--radio) var(--radio); }
+  .tarifas, .galeria, .pasos, .info { grid-template-columns: 1fr; }
+  .info { gap: 2.5rem; }
+  .seccion { padding-block: 3rem; }
+
+  .whatsapp-movil {
+    display: block;
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+    z-index: 20;
+    background: var(--acento);
+    color: var(--acento-texto);
+    text-align: center;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.95rem;
+    border-radius: 999px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+}
